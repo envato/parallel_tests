@@ -11,7 +11,7 @@ module ParallelTests
           options = options.merge(:env => {"AUTOTEST" => "1"}) if $stdout.tty? # display color when we are in a terminal
           cmd = [
             executable,
-            (runtime_logging if File.directory?(File.dirname(runtime_log))),
+            # (runtime_logging if File.directory?(File.dirname(runtime_log))),
             cucumber_opts(options[:test_options]),
             *sanitized_test_files
           ].compact.join(" ")
