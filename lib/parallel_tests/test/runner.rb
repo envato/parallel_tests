@@ -71,6 +71,8 @@ module ParallelTests
           end.join(separator)
           cmd = "#{exports}#{separator}#{cmd}"
 
+          p "parallel_test_command: #{cmd}"
+          p "silence: #{silence}"
           output = open("|#{cmd}", "r") { |output| capture_output(output, silence) }
           exitstatus = $?.exitstatus
 
